@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_edu_teacher_administrator,edu.payment administrator,model_edu_teacher,group_edu_administrator,1,1,1,1
+access_edu_student_administrator,edu.payment administrator,model_edu_student,group_edu_administrator,1,1,1,1
+access_edu_course_administrator,edu.payment administrator,model_edu_course,group_edu_administrator,1,1,1,1
+access_edu_group_administrator,edu.payment administrator,model_edu_group,group_edu_administrator,1,1,1,1
+access_edu_teacher_administrator,edu.payment administrator,model_edu_teacher,group_edu_administrator,1,1,1,1
+access_edu_payment_administrator,edu.payment administrator,model_edu_payment,group_edu_administrator,1,0,1,0
+
+
+access_edu_teacher_admin,edu.payment admin,model_edu_teacher,group_edu_admin,1,1,1,1
+access_edu_student_admin,edu.payment admin,model_edu_student,group_edu_admin,1,1,1,1
+access_edu_course_admin,edu.payment admin,model_edu_course,group_edu_admin,1,1,1,1
+access_edu_group_admin,edu.payment admin,model_edu_group,group_edu_admin,1,1,1,1
+access_edu_teacher_admin,edu.payment admin,model_edu_teacher,group_edu_admin,1,1,1,1
+access_edu_payment_admin,edu.payment admin,model_edu_payment,group_edu_admin,1,1,1,1
+access_edu_salary_admin,edu.payment admin,model_edu_salary,group_edu_admin,1,1,1,1

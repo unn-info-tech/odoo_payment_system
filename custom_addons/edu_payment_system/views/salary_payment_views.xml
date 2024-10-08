@@ -1,0 +1,39 @@
+<odoo>
+    <record id="action_salary_tree" model="ir.actions.act_window">
+        <field name="name">Salary</field>
+        <field name="res_model">edu.salary</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="salary_menu" name="Salary Payment" parent="education_menu_root" action="action_salary_tree" sequence="50"/>
+
+    <record id="view_salary_tree" model="ir.ui.view">
+        <field name="name">edu.salary.tree</field>
+        <field name="model">edu.salary</field>
+        <field name="arch" type="xml">
+            <tree string="Salary Payments">
+                <field name="teacher_id"/>
+                <field name="amount"/>
+                <field name="payment_date"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_salary_form" model="ir.ui.view">
+        <field name="name">edu.salary.form</field>
+        <field name="model">edu.salary</field>
+        <field name="arch" type="xml">
+            <form string="Salary Payment">
+                <sheet>
+                    <group>
+                        <field name="teacher_id"/>
+                        <field name="amount"/>
+                        <field name="payment_date"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

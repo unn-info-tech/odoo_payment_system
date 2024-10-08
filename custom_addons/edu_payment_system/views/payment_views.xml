@@ -1,0 +1,71 @@
+<odoo>
+    <!-- Action Aministratos -->
+    <record id="action_payment_tree" model="ir.actions.act_window">
+        <field name="name">Student Payments</field>
+        <field name="res_model">edu.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[
+            ('payment_date', '>=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))
+        ]</field>
+        <field name="groups_id" eval="[(6, 0, [ref('group_edu_administrator')])]"/>
+    </record>
+
+
+    <!-- Admin Action:  -->
+    <record id="action_payment_tree_admin" model="ir.actions.act_window">
+        <field name="name">Student Payments</field>
+        <field name="res_model">edu.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="groups_id" eval="[(6, 0, [ref('group_edu_admin')])]"/>
+    </record>
+    
+    <!-- Menu Admin -->
+    <menuitem id="menu_payment_admin"
+            name="Student Payments"
+            parent="education_menu_root"
+            action="action_payment_tree_admin"
+            groups="group_edu_admin"
+            sequence="60"/>
+
+    <!-- Menu Administrator -->
+    <menuitem id="payment_menu" 
+              name="Student Payments" 
+              parent="education_menu_root" 
+              action="action_payment_tree"  
+              groups="group_edu_administrator" 
+              sequence="60"/>
+
+
+
+    <!-- Tree View for Student Payment Records -->
+    <record id="view_payment_tree" model="ir.ui.view">
+        <field name="name">edu.payment.tree</field>
+        <field name="model">edu.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Student Payments">
+                <field name="student_id"/>
+                <field name="amount"/>
+                <field name="payment_date"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Student Payment Records -->
+    <record id="view_payment_form" model="ir.ui.view">
+        <field name="name">edu.payment.form</field>
+        <field name="model">edu.payment</field>
+        <field name="arch" type="xml">
+            <form string="Student Payment">
+                <sheet>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="amount"/>
+                        <field name="payment_date"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

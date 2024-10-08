@@ -1,0 +1,11 @@
+<odoo>
+    <!-- Define Education Admin Group -->
+    <record id="group_edu_admin" model="res.groups">
+        <field name="name">Education Admin</field>
+    </record>
+
+    <!-- Define Education Administrator Group -->
+    <record id="group_edu_administrator" model="res.groups">
+        <field name="name">Education Administrator</field>
+    </record>
+</odoo>

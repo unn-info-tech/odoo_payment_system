@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_edu_payment_admin,edu.payment aedmin,model_edu_payment,group_edu_admin,1,1,1,1
+access_edu_payment_administrator,edu.payment administrator,model_edu_payment,group_edu_administrator,1,1,1,0

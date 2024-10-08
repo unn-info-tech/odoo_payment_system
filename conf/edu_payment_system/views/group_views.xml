@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Tree View for Groups -->
+    <record id="view_group_tree" model="ir.ui.view">
+        <field name="name">group.tree</field>
+        <field name="model">edu.group</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="course_ids"/> 
+                <field name="teacher_ids"/> 
+                <field name="student_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Groups -->
+    <record id="view_group_form" model="ir.ui.view">
+        <field name="name">group.form</field>
+        <field name="model">edu.group</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="course_ids" widget="many2many_tags"/> 
+                        <field name="teacher_ids" widget="many2many_tags"/> 
+                        <field name="student_ids" widget="many2many_tags"/> 
+                    </group>
+                    <group>
+                        <!-- Automatically display the payments related to the students in this group -->
+                        <field name="payment_ids" widget="one2many"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+</odoo>
